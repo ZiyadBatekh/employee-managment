@@ -22,7 +22,31 @@ export class EmployeeService {
 
   constructor() { }
 
+  // إرجاع الموظفين بشكل متزامن
   getEmployees(): Employee[] {
     return this.employees;
+  }
+
+  // إرجاع الموظفين بشكل غير متزامن (Promise)
+  getEmployeesAsync(): Promise<Employee[]> {
+    return Promise.resolve(this.employees);
+  }
+
+  // إضافة موظف جديد
+  addEmployee(employee: Employee): void {
+    this.employees.push(employee);
+  }
+
+  // تحديث بيانات موظف
+  updateEmployee(updatedEmployee: Employee): void {
+    const index = this.employees.findIndex(emp => emp.id === updatedEmployee.id);
+    if (index !== -1) {
+      this.employees[index] = updatedEmployee;
+    }
+  }
+
+  // حذف موظف
+  deleteEmployee(id: number): void {
+    this.employees = this.employees.filter(emp => emp.id !== id);
   }
 }
