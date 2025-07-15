@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Employee } from '../models/employee.model';
+import { Observable, of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -23,30 +25,31 @@ export class EmployeeService {
   constructor() { }
 
   // إرجاع الموظفين بشكل متزامن
-  getEmployees(): Employee[] {
-    return this.employees;
+  getEmployees(): Observable<Employee[]> {
+    return of(this.employees).pipe(delay(300)); // simulate HTTP GET
   }
 
   // إرجاع الموظفين بشكل غير متزامن (Promise)
-  getEmployeesAsync(): Promise<Employee[]> {
-    return Promise.resolve(this.employees);
-  }
+  // Deprecated: use getEmployees() instead
 
   // إضافة موظف جديد
-  addEmployee(employee: Employee): void {
+  addEmployee(employee: Employee): Observable<Employee> {
     this.employees.push(employee);
+    return of(employee).pipe(delay(200)); // simulate HTTP POST
   }
 
   // تحديث بيانات موظف
-  updateEmployee(updatedEmployee: Employee): void {
+  updateEmployee(updatedEmployee: Employee): Observable<Employee> {
     const index = this.employees.findIndex(emp => emp.id === updatedEmployee.id);
     if (index !== -1) {
       this.employees[index] = updatedEmployee;
     }
+    return of(updatedEmployee).pipe(delay(200)); // simulate HTTP PATCH
   }
 
   // حذف موظف
-  deleteEmployee(id: number): void {
+  deleteEmployee(id: number): Observable<number> {
     this.employees = this.employees.filter(emp => emp.id !== id);
+    return of(id).pipe(delay(200)); // simulate HTTP DELETE
   }
 }
