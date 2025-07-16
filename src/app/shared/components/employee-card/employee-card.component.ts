@@ -3,9 +3,8 @@ import { Employee } from '../../models/employee.model';
 
 @Component({
   selector: 'app-employee-card',
-  standalone: true,
-  // imports: [PrimeNG modules, Transloco, ...]
   templateUrl: './employee-card.component.html',
+  standalone:false,
   styleUrls: ['./employee-card.component.scss']
 })
 export class EmployeeCardComponent {

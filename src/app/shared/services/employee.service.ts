@@ -23,15 +23,11 @@ export class EmployeeService {
   ];
 
   constructor() { }
-
+  
   // إرجاع الموظفين بشكل متزامن
   getEmployees(): Observable<Employee[]> {
     return of(this.employees).pipe(delay(300)); // simulate HTTP GET
   }
-
-  // إرجاع الموظفين بشكل غير متزامن (Promise)
-  // Deprecated: use getEmployees() instead
-
   // إضافة موظف جديد
   addEmployee(employee: Employee): Observable<Employee> {
     this.employees.push(employee);

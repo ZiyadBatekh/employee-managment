@@ -8,14 +8,6 @@ import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-employees-list',
-  standalone: true,
-  imports: [
-    DataViewModule,
-    TagModule,
-
-    ButtonModule,
-    CommonModule,
-  ],
   templateUrl: './employees-list.component.html',
   styleUrls: ['./employees-list.component.scss']
 })
