@@ -21,10 +21,12 @@
       { label: 'Suspended', value: 'suspended' }
     ]" placeholder="Select status"></p-dropdown>
   </div>
-
+  
   <div class="p-d-flex p-jc-between">
-      <p-button label="Save" (onClick)="save()" [disabled]="!employeeForm.valid"></p-button>
-    <p-button label="Cancel" (onClick)="cancel()" class="p-button-secondary"></p-button>
+    <div class="mb-3">
+        <p-button label="Save" (onClick)="save()" [disabled]="!employeeForm.valid"></p-button>
+    </div>
+    <p-button label="Cancel" (onClick)="cancel()" [outlined]="true"></p-button>
   </div>
 </form>
   
