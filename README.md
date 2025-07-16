@@ -39,6 +39,9 @@ The following components are built in the shared module to ensure reusability ac
 
 These components are designed to be modular and reusable, eliminating the need to duplicate code when using them in different parts of the application.
 
+### Additional Features
+- **Add New Employee Button**: Although not part of the original requirements, an "Add New Employee" button was implemented using the same form component used for editing employees. This was a straightforward addition since the form logic was already in place and could be easily reused for creating new employee records.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

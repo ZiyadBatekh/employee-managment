@@ -10,10 +10,11 @@ import { DialogService } from 'primeng/dynamicdialog';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { EmployeesModule } from './features/employees/employees.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
   BrowserModule,
@@ -21,6 +22,7 @@ import { EmployeesModule } from './features/employees/employees.module';
   HttpClientModule,
   SharedModule,
   EmployeesModule,
+  CoreModule,
   RouterModule.forRoot(routes)
     
   ],

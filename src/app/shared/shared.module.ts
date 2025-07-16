@@ -13,7 +13,7 @@ import { ToastModule } from 'primeng/toast';
 import { ToolbarModule } from 'primeng/toolbar';
 import { EmployeeCardComponent } from './components/employee-card/employee-card.component';
 import { AlertComponent } from './components/alert/alert.component';
-import { HeaderComponent } from './layout/header/header.component';
+
 import { SmartFiltersComponent } from './components/smart-filters/smart-filters.component';
 
 const PRIMENG_MODULES = [
@@ -33,7 +33,7 @@ const PRIMENG_MODULES = [
   declarations: [
     EmployeeCardComponent,
     AlertComponent,
-    HeaderComponent,
+   
     SmartFiltersComponent
   ],
   imports: [
@@ -49,7 +49,6 @@ const PRIMENG_MODULES = [
     ReactiveFormsModule,
     EmployeeCardComponent,
     AlertComponent,
-    HeaderComponent,
     SmartFiltersComponent,
     ...PRIMENG_MODULES
   ]
