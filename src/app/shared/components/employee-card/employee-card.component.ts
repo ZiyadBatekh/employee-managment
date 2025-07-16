@@ -8,21 +8,13 @@ import { Employee } from '../../models/employee.model';
   styleUrls: ['./employee-card.component.scss']
 })
 export class EmployeeCardComponent {
+  @Input() fullName!: string;
+  @Input() department!: string;
+  @Input() hireDate!: Date;
+  @Input() status!: 'Active' | 'Suspended';
   @Input() employee!: Employee;
-  @Input() showActions: boolean = true;
-
   @Output() edit = new EventEmitter<Employee>();
-  @Output() delete = new EventEmitter<Employee>();
+  @Output() delete = new EventEmitter<number>();
 
-  getStatusSeverity(): 'success' | 'danger' {
-    return this.employee.status === 'active' ? 'success' : 'danger';
-  }
-
-  onEdit() {
-    this.edit.emit(this.employee);
-  }
-
-  onDelete() {
-    this.delete.emit(this.employee);
-  }
+ 
 }

@@ -4,5 +4,5 @@ export interface Employee {
   department: string;
   hireDate: string;
   status: 'active' | 'suspended';
-  image?: string; 
+  image: string;
 }

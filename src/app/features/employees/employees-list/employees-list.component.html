@@ -1,0 +1,35 @@
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <app-smart-filters
+      [searchPlaceholder]="'Search employees...'"
+      [statusOptions]="[
+        { label: 'All', value: 'all' },
+        { label: 'Active', value: 'active' },
+        { label: 'Suspended', value: 'suspended' }
+      ]"
+      (filterChanged)="applyFilter($event)">
+    </app-smart-filters>
+  </div>
+
+  @if (isLoading) {
+    <div class="text-center">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  }
+  @if (!isLoading) {
+    <div class="row justify-content-center">
+      @for(employee of filteredEmployees; track employee.id) {
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+          <app-employee-card
+            [employee]="employee"
+            (edit)="onEdit($event)"
+            (delete)="onDelete($event)">
+          </app-employee-card>
+        </div>
+      }
+    </div>
+  }
+  </div>
+  

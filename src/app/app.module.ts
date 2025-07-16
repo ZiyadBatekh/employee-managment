@@ -8,8 +8,10 @@ import { AppComponent } from './app.component';
 import { EmployeesListComponent } from './features/employees/employees-list/employees-list.component';
 import { AddEditEmployeeComponent } from './features/employees/add-edit-employee/add-edit-employee.component';
 import { EmployeeCardComponent } from './shared/components/employee-card/employee-card.component';
-import { DeleteConfirmationComponent } from './shared/components/delete-confirmation/delete-confirmation.component';
 import { EmployeeService } from './shared/services/employee.service';
+import { SmartFiltersComponent } from './shared/components/smart-filters/smart-filters.component';
+
+import { HeaderComponent } from './shared/layout/header/header.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { EmployeeService } from './shared/services/employee.service';
     EmployeesListComponent,
     AddEditEmployeeComponent,
     EmployeeCardComponent,
-    DeleteConfirmationComponent
+    SmartFiltersComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
