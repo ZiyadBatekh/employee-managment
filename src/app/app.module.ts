@@ -10,8 +10,12 @@ import { AddEditEmployeeComponent } from './features/employees/add-edit-employee
 import { EmployeeCardComponent } from './shared/components/employee-card/employee-card.component';
 import { EmployeeService } from './shared/services/employee.service';
 import { SmartFiltersComponent } from './shared/components/smart-filters/smart-filters.component';
-
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmationService } from 'primeng/api';
+import { ButtonModule } from 'primeng/button';
 import { HeaderComponent } from './shared/layout/header/header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AlertComponent } from './shared/components/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -20,15 +24,19 @@ import { HeaderComponent } from './shared/layout/header/header.component';
     AddEditEmployeeComponent,
     EmployeeCardComponent,
     SmartFiltersComponent,
-    HeaderComponent
+    HeaderComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ConfirmDialogModule,
+    BrowserAnimationsModule,
+    ButtonModule,
     CommonModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [EmployeeService],
+  providers: [EmployeeService , ConfirmationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { } 
