@@ -1,6 +1,9 @@
 <div class="container mt-4">
   <p-confirmDialog></p-confirmDialog>
-  <div class="row justify-content-center">
+  <div class="col-3">
+   <p-button label="Add new Employee" icon="pi pi-plus" />
+  </div>
+  <div class="row justify-content-center mt-3">
     <app-smart-filters
       [searchPlaceholder]="'Search employees...'"
       [statusOptions]="[
