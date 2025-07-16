@@ -21,7 +21,6 @@ export class EmployeesListComponent {
   }
 
   //popup for opening add new employee form
-
   openAddEmployee() {
     const ref = this.dialogService.open(AddEditEmployeeComponent, {
       header: 'Add New Employee',
@@ -50,7 +49,7 @@ export class EmployeesListComponent {
     });
   }
 
-  // GET employes from the service (simulating fetching the data from the backend from GET api)
+  // GET employes from the service (simulating fetching the data from GET api that should exist in the service)
   fetchEmployees(): void {
     this.employeeService.getEmployees().subscribe((data) => {
       this.employees = data;

@@ -29,7 +29,5 @@ export class EmployeeCardComponent {
     this.delete.emit(this.employee.id);
   }
 
-  onCancelledDelete() {
-    console.log('Delete cancelled');
-  }
+  onCancelledDelete() {}
 }

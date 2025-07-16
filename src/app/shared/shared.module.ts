@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-// ✅ PrimeNG Modules
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
@@ -13,8 +11,6 @@ import { DropdownModule } from 'primeng/dropdown';
 import { FileUploadModule } from 'primeng/fileupload';
 import { ToastModule } from 'primeng/toast';
 import { ToolbarModule } from 'primeng/toolbar';
-
-// ✅ Shared Components
 import { EmployeeCardComponent } from './components/employee-card/employee-card.component';
 import { AlertComponent } from './components/alert/alert.component';
 import { HeaderComponent } from './layout/header/header.component';
@@ -38,7 +34,7 @@ const PRIMENG_MODULES = [
     EmployeeCardComponent,
     AlertComponent,
     HeaderComponent,
-    SmartFiltersComponent // ✅ أضفها هنا
+    SmartFiltersComponent
   ],
   imports: [
     CommonModule,
@@ -54,7 +50,7 @@ const PRIMENG_MODULES = [
     EmployeeCardComponent,
     AlertComponent,
     HeaderComponent,
-    SmartFiltersComponent, // ✅ وأضفها هنا
+    SmartFiltersComponent,
     ...PRIMENG_MODULES
   ]
 })
