@@ -1,20 +1,3 @@
 {
-  "employees": "Employees",
-  "add_employee": "Add Employee",
-  "edit_employee": "Edit Employee",
-  "delete_employee": "Delete Employee",
-  "employee_name": "Employee Name",
-  "department": "Department",
-  "hire_date": "Hire Date",
-  "status": "Status",
-  "active": "Active",
-  "suspended": "Suspended",
-  "actions": "Actions",
-  "edit": "Edit",
-  "delete": "Delete",
-  "confirm_delete": "Are you sure you want to delete this employee?",
-  "cancel": "Cancel",
-  "confirm": "Confirm",
-  "search": "Search...",
-  "all": "All"
+    "COMMON":{}
 }

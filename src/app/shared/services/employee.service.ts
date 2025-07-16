@@ -6,6 +6,7 @@ import { delay } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
+
 export class EmployeeService {
   private employees: Employee[] = [
     { id: 1, name: 'Ahmed Ali', department: 'HR', hireDate: '2022-01-15', status: 'active', image: '' },
@@ -24,17 +25,18 @@ export class EmployeeService {
 
   constructor() { }
   
-  // إرجاع الموظفين بشكل متزامن
+  // GET all employees 
   getEmployees(): Observable<Employee[]> {
     return of(this.employees).pipe(delay(300)); // simulate HTTP GET
   }
-  // إضافة موظف جديد
+  
+  // Add new employee
   addEmployee(employee: Employee): Observable<Employee> {
     this.employees.push(employee);
     return of(employee).pipe(delay(200)); // simulate HTTP POST
   }
 
-  // تحديث بيانات موظف
+  // Edit or update an employee
   updateEmployee(updatedEmployee: Employee): Observable<Employee> {
     const index = this.employees.findIndex(emp => emp.id === updatedEmployee.id);
     if (index !== -1) {
@@ -43,7 +45,7 @@ export class EmployeeService {
     return of(updatedEmployee).pipe(delay(200)); // simulate HTTP PATCH
   }
 
-  // حذف موظف
+  // Delete an Employee
   deleteEmployee(id: number): Observable<number> {
     this.employees = this.employees.filter(emp => emp.id !== id);
     return of(id).pipe(delay(200)); // simulate HTTP DELETE

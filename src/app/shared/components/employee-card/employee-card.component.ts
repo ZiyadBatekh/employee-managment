@@ -17,11 +17,10 @@ export class EmployeeCardComponent {
   @Input() employee!: Employee;
   @Output() edit = new EventEmitter<Employee>();
   @Output() delete = new EventEmitter<number>();
-
-  constructor(private confirmationService: ConfirmationService) {}
-
   @ViewChild(AlertComponent) alert!: AlertComponent;
 
+  constructor(private confirmationService: ConfirmationService) {}
+  
   confirmDelete(event: Event) {
     this.alert.show(event.target);
   }
@@ -33,5 +32,4 @@ export class EmployeeCardComponent {
   onCancelledDelete() {
     console.log('Delete cancelled');
   }
-  
 }

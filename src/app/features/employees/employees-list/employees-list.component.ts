@@ -20,6 +20,8 @@ export class EmployeesListComponent {
     this.fetchEmployees();
   }
 
+  //popup for opening add new employee form
+
   openAddEmployee() {
     const ref = this.dialogService.open(AddEditEmployeeComponent, {
       header: 'Add New Employee',
@@ -33,6 +35,7 @@ export class EmployeesListComponent {
     });
   }
 
+  //popup for editing an existing employee
   openEditEmployee(employee: Employee) {
     const ref = this.dialogService.open(AddEditEmployeeComponent, {
       data: { employee },
@@ -47,6 +50,7 @@ export class EmployeesListComponent {
     });
   }
 
+  // GET employes from the service (simulating fetching the data from the backend from GET api)
   fetchEmployees(): void {
     this.employeeService.getEmployees().subscribe((data) => {
       this.employees = data;
@@ -55,26 +59,21 @@ export class EmployeesListComponent {
     });
   }
 
+  // Applying filteration 
   applyFilter(filter: { search: string; status: string }) {
     this.filteredEmployees = this.employees.filter(employee => {
       const matchesSearch = employee.name.toLowerCase().includes(filter.search)
         || employee.department.toLowerCase().includes(filter.search)
         || employee.hireDate.includes(filter.search)
         || employee.status.toLowerCase().includes(filter.search);
-
       const matchesStatus = filter.status === 'all'
         || employee.status === filter.status;
-
       return matchesSearch && matchesStatus;
     });
   }
 
-  onEdit(employee: Employee): void {
-    console.log('Edit employee:', employee);
-  }
-
+  // deleting an employee
   onDelete(id: number): void {
-    console.log('Delete employee with ID:', id);
     this.employeeService.deleteEmployee(id).subscribe(() => {
       this.employees = this.employees.filter(emp => emp.id !== id);
       this.filteredEmployees = this.filteredEmployees.filter(emp => emp.id !== id);

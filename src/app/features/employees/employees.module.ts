@@ -7,13 +7,9 @@ import { DropdownModule } from 'primeng/dropdown';
 import { FileUploadModule } from 'primeng/fileupload';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
-
 import { EmployeesListComponent } from './employees-list/employees-list.component';
 import { AddEditEmployeeComponent } from './add-edit-employee/add-edit-employee.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { HttpClientModule } from '@angular/common/http';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { SharedModule } from '../../shared/shared.module';
 

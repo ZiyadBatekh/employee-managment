@@ -17,7 +17,8 @@ export class AlertComponent {
   @Output() cancelled = new EventEmitter<void>();
 
   constructor(private confirmationService: ConfirmationService) {}
-
+  
+  // using primeNG for showing a confirmation popup
   show(target?: EventTarget | null) {
     this.confirmationService.confirm({
       target: target ?? undefined,

@@ -14,7 +14,6 @@
     </p>
   </div>
   <div class="card-footer d-flex justify-content-between">
-    
       <i
         class="pi pi-pen-to-square text-primary fs-5 cursor-pointer"
         (click)="edit.emit(employee)"
@@ -25,10 +24,9 @@
         (click)="confirmDelete($event)"
         title="Delete">
       </i>
-    
   </div>
 
-  <!-- ✅ Custom Alert -->
+  <!--using alert component for custom alert -->
   <app-alert
     [message]="'Do you really want to delete ' + employee.name + '?'"
     [icon]="'pi pi-trash'"
