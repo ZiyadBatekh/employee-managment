@@ -1,1 +1,30 @@
-<p>add-edit-employee works!</p>
+<form [formGroup]="employeeForm" class="p-fluid">
+  <div class="field mb-3">
+    <label for="name">Name</label>
+    <input pInputText id="name" formControlName="name" placeholder="Enter employee name" />
+  </div>
+
+  <div class="field mb-3">
+    <label for="department">Department</label>
+    <input pInputText id="department" formControlName="department" placeholder="Enter department" />
+  </div>
+
+  <div class="field mb-3">
+    <label for="hireDate">Hire Date</label>
+    <p-calendar id="hireDate" formControlName="hireDate" dateFormat="yy-mm-dd"></p-calendar>
+  </div>
+
+  <div class="field mb-3">
+    <label for="status">Status</label>
+    <p-dropdown id="status" formControlName="status" [options]="[
+      { label: 'Active', value: 'active' },
+      { label: 'Suspended', value: 'suspended' }
+    ]" placeholder="Select status"></p-dropdown>
+  </div>
+
+  <div class="p-d-flex p-jc-between">
+      <p-button label="Save" (onClick)="save()" [disabled]="!employeeForm.valid"></p-button>
+    <p-button label="Cancel" (onClick)="cancel()" class="p-button-secondary"></p-button>
+  </div>
+</form>
+  

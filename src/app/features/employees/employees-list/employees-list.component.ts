@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Employee } from '../../../shared/models/employee.model';
 import { EmployeeService } from '../../../shared/services/employee.service';
+import { DialogService } from 'primeng/dynamicdialog';
+import { AddEditEmployeeComponent } from '../add-edit-employee/add-edit-employee.component';
 
 @Component({
   selector: 'app-employees-list',
@@ -12,10 +14,37 @@ export class EmployeesListComponent {
   filteredEmployees: Employee[] = [];
   isLoading = true;
 
-  constructor(private employeeService: EmployeeService) {}
+  constructor(private employeeService: EmployeeService , private dialogService: DialogService) {}
 
   ngOnInit(): void {
     this.fetchEmployees();
+  }
+
+  openAddEmployee() {
+    const ref = this.dialogService.open(AddEditEmployeeComponent, {
+      header: 'Add New Employee',
+      width: '500px'
+    });
+  
+    ref.onClose.subscribe((employee) => {
+      if (employee) {
+        this.employeeService.addEmployee(employee).subscribe(() => this.fetchEmployees());
+      }
+    });
+  }
+
+  openEditEmployee(employee: Employee) {
+    const ref = this.dialogService.open(AddEditEmployeeComponent, {
+      data: { employee },
+      header: 'Edit Employee',
+      width: '500px'
+    });
+  
+    ref.onClose.subscribe((updatedEmployee) => {
+      if (updatedEmployee) {
+        this.employeeService.updateEmployee(updatedEmployee).subscribe(() => this.fetchEmployees());
+      }
+    });
   }
 
   fetchEmployees(): void {

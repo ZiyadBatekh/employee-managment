@@ -1,7 +1,8 @@
 <div class="container mt-4">
   <p-confirmDialog></p-confirmDialog>
   <div class="col-3">
-   <p-button label="Add new Employee" icon="pi pi-plus" />
+    <p-button label="Add new Employee" icon="pi pi-plus" (onClick)="openAddEmployee()"></p-button>
+
   </div>
   <div class="row justify-content-center mt-3">
     <app-smart-filters
@@ -27,10 +28,11 @@
       @for(employee of filteredEmployees; track employee.id) {
         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
           <app-employee-card
-            [employee]="employee"
-            (edit)="onEdit($event)"
-            (delete)="onDelete($event)">
-          </app-employee-card>
+          [employee]="employee"
+          (edit)="openEditEmployee($event)"
+          (delete)="onDelete($event)">
+        </app-employee-card>
+        
         </div>
       }
     </div>
