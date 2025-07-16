@@ -59,7 +59,8 @@ export class EmployeesListComponent {
     this.filteredEmployees = this.employees.filter(employee => {
       const matchesSearch = employee.name.toLowerCase().includes(filter.search)
         || employee.department.toLowerCase().includes(filter.search)
-        || employee.hireDate.includes(filter.search);
+        || employee.hireDate.includes(filter.search)
+        || employee.status.toLowerCase().includes(filter.search);
 
       const matchesStatus = filter.status === 'all'
         || employee.status === filter.status;
