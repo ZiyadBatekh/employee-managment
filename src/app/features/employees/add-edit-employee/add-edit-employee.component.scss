@@ -1,0 +1,8 @@
+::ng-deep .p-dialog,
+::ng-deep .p-dialog .p-dialog-content {
+  overflow: visible !important;
+}
+
+::ng-deep .p-datepicker {
+  z-index: 9999 !important;
+} 

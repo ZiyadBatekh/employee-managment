@@ -24,7 +24,8 @@ export class EmployeesListComponent {
   openAddEmployee() {
     const ref = this.dialogService.open(AddEditEmployeeComponent, {
       header: 'Add New Employee',
-      width: '500px'
+     width: '45rem',
+      height: '37rem'
     });
   
     ref.onClose.subscribe((employee) => {
@@ -39,7 +40,8 @@ export class EmployeesListComponent {
     const ref = this.dialogService.open(AddEditEmployeeComponent, {
       data: { employee },
       header: 'Edit Employee',
-      width: '500px'
+      width: '45rem',
+      height: '37rem'
     });
   
     ref.onClose.subscribe((updatedEmployee) => {
